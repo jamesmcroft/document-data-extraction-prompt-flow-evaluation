@@ -1,0 +1,10 @@
+$schema: https://azuremlschemas.azureedge.net/latest/flow.schema.json
+name: document_extraction_flow
+display_name: Document Extraction Flow
+type: standard
+path: ./flow.dag.yaml
+description: Prompt Flow logic for extracting structured data from documents using GPT-4o with vision
+properties:
+  promptflow.stage: prod
+  promptflow.section: template
+  promptflow.batch_inputs: samples.json

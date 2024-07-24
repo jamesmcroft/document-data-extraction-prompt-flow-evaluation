@@ -1,0 +1,37 @@
+{
+  "orientation": "Vertical",
+  "nodeLayouts": {
+    "inputs": {
+      "x": 290,
+      "y": 42,
+      "index": -1
+    },
+    "outputs": {
+      "x": 220,
+      "y": 444,
+      "index": -1
+    },
+    "load_images": {
+      "x": 227.5,
+      "y": 176,
+      "height": 75,
+      "index": 0
+    },
+    "extract_document_data": {
+      "x": 140,
+      "y": 310,
+      "height": 75,
+      "index": 1
+    }
+  },
+  "viewport": {
+    "transformMatrix": [
+      0.8473321344609008,
+      0,
+      0,
+      0.8473321344609008,
+      254.83051556194306,
+      305.51876497420614
+    ]
+  }
+}

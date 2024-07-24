@@ -1,0 +1,53 @@
+id: document_extraction_flow
+name: Document Extraction Flow
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  system_prompt:
+    type: string
+    is_chat_input: false
+  extraction_prompt:
+    type: string
+    is_chat_input: false
+  blob_container_name:
+    type: string
+    default: ""
+    is_chat_input: false
+  storage_account_name:
+    type: string
+    default: ""
+    is_chat_input: false
+  temperature:
+    type: double
+    is_chat_input: false
+  top_p:
+    type: double
+    is_chat_input: false
+outputs:
+  results:
+    type: string
+    reference: ${extract_document_data.output}
+nodes:
+  - name: load_images
+    type: python
+    source:
+      type: code
+      path: load_images.py
+    inputs:
+      image_container_name: ${inputs.blob_container_name}
+      storage_account_name: ${inputs.storage_account_name}
+    use_variants: false
+  - name: extract_document_data
+    type: python
+    source:
+      type: code
+      path: extract_document_data.py
+    inputs:
+      aoai_connection: secure-ai-services-devuks-connection_aoai
+      extraction_prompt: ${inputs.extraction_prompt}
+      image_uris: ${load_images.output}
+      model_deployment: gpt-4o
+      system_prompt: ${inputs.system_prompt}
+      temperature: ${inputs.temperature}
+      top_p: ${inputs.top_p}
+    use_variants: false

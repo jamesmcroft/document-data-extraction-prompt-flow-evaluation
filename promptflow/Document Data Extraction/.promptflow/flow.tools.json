@@ -1,0 +1,66 @@
+{
+  "package": {},
+  "code": {
+    "load_images.py": {
+      "type": "python",
+      "inputs": {
+        "storage_account_name": {
+          "type": [
+            "string"
+          ]
+        },
+        "image_container_name": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "description": "Loads images from a specified Azure Blob Storage container and returns them as base64-encoded URIs.\n\n:param storage_account_name: The name of the Azure Storage account.\n:param image_container_name: The name of the container that stores the images.\n\n:return: A list of base64-encoded URIs for the images in the specified container.",
+      "source": "load_images.py",
+      "function": "load_images"
+    },
+    "extract_document_data.py": {
+      "type": "python",
+      "inputs": {
+        "aoai_connection": {
+          "type": [
+            "AzureOpenAIConnection"
+          ]
+        },
+        "model_deployment": {
+          "type": [
+            "string"
+          ]
+        },
+        "system_prompt": {
+          "type": [
+            "string"
+          ]
+        },
+        "extraction_prompt": {
+          "type": [
+            "string"
+          ]
+        },
+        "temperature": {
+          "type": [
+            "double"
+          ]
+        },
+        "top_p": {
+          "type": [
+            "double"
+          ]
+        },
+        "image_uris": {
+          "type": [
+            "object"
+          ]
+        }
+      },
+      "description": "Extracts structured data from a document using the specified instruction and extraction prompts.\n\n:param aoai_connection: The Azure OpenAI connection to use for the extraction.\n:param model_deployment: The deployment ID of the model to use for extraction (e.g., \"gpt-4o\").\n:param system_prompt: The system prompt to use for the extraction.\n:param extraction_prompt: The extraction prompt to use for the extraction including the expected output format.\n:param temperature: The temperature to use for the extraction (e.g., 0.1 for deterministic outputs).\n:param top_p: The top_p value to use for the extraction (e.g., 0.1 for deterministic outputs).\n:param image_uris: A list of base64-encoded URIs for the document images to include in the extraction.\n\n:return: The extracted data.",
+      "source": "extract_document_data.py",
+      "function": "extract_document_data"
+    }
+  }
+}
