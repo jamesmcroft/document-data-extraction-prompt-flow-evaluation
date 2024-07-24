@@ -1,3 +1,4 @@
+import json
 from promptflow import tool
 from promptflow.connections import AzureOpenAIConnection
 from openai import AzureOpenAI
@@ -65,4 +66,6 @@ def extract_document_data(aoai_connection: AzureOpenAIConnection, model_deployme
         max_tokens=4096
     )
 
-    return response.choices[0].message.content
+    response_content_str = response.choices[0].message.content
+
+    return json.loads(response_content_str)

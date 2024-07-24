@@ -1,0 +1,10 @@
+$schema: https://azuremlschemas.azureedge.net/latest/flow.schema.json
+name: document_data_extraction_evaluation_flow
+display_name: Document Data Extraction Evaluation Flow
+type: evaluation
+path: ./flow.dag.yaml
+description: Prompt Flow evaluation logic for comparing the outputs of document data extraction with ground truth
+properties:
+  promptflow.stage: prod
+  promptflow.section: template
+  promptflow.batch_inputs: samples.json

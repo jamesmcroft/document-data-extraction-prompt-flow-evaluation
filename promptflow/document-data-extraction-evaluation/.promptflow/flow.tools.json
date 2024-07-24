@@ -1,0 +1,23 @@
+{
+  "package": {},
+  "code": {
+    "compare_results.py": {
+      "type": "python",
+      "inputs": {
+        "expected": {
+          "type": [
+            "object"
+          ]
+        },
+        "actual": {
+          "type": [
+            "object"
+          ]
+        }
+      },
+      "description": "Compares the expected and actual results and returns the valid and invalid keys and the accuracy of the comparison.\n\n:param expected: The expected results.\n:param actual: The actual results.\n\n:return: The valid keys, invalid keys, and accuracy percentage of the comparison.",
+      "source": "compare_results.py",
+      "function": "compare_results"
+    }
+  }
+}

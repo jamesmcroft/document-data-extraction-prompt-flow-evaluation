@@ -1,0 +1,85 @@
+id: document_extraction_flow
+name: Document Extraction Flow
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  system_prompt:
+    type: string
+    is_chat_input: false
+    default:
+      You are an AI assistant that extracts data from documents and returns
+      them as structured JSON objects. Do not return as a code block.
+    description:
+      The default instruction prompt that tailors the model to a specific
+      task, in this example, document data extraction to structured JSON
+      objects.
+  extraction_prompt:
+    type: string
+    is_chat_input: false
+    default:
+      "Extract the data from this document using the provided JSON structure
+      only. Only provide values for the fields in the structure. If a value is
+      not present, provide null. Values in the structure may be inferred based
+      on other values and rules defined in the text. Use the following
+      structure: "
+    description: The specific scenario instruction for performing the extraction
+      containing key rules for performing an extraction on a type of document,
+      including the expected output JSON object schema.
+  storage_account_name:
+    type: string
+    default: ""
+    is_chat_input: false
+    description: The name of an Azure Storage Account where document images are
+      stored that the compute's managed identity can access with appropriate
+      read RBAC.
+  blob_container_name:
+    type: string
+    default: ""
+    is_chat_input: false
+    description:
+      The name of the blob container in the Azure Storage Account where
+      the document images are stored.
+  temperature:
+    type: double
+    is_chat_input: false
+    default: 0.1
+    description:
+      The creativity or randomness control. A lower number will result in
+      more deterministic and focused outputs, great for accurate data
+      extraction.
+  top_p:
+    type: double
+    is_chat_input: false
+    default: 0.1
+    description:
+      The generated token probability control. A lower number will result
+      in the model only consider this top % probability mass for the next token,
+      resulting in more deterministic outputs.
+outputs:
+  results:
+    type: string
+    reference: ${extract_document_data.output}
+nodes:
+  - name: load_images
+    type: python
+    source:
+      type: code
+      path: load_images.py
+    inputs:
+      image_container_name: ${inputs.blob_container_name}
+      storage_account_name: ${inputs.storage_account_name}
+    use_variants: false
+  - name: extract_document_data
+    type: python
+    source:
+      type: code
+      path: extract_document_data.py
+    inputs:
+      aoai_connection: secure-ai-services-devuks-connection_aoai
+      extraction_prompt: ${inputs.extraction_prompt}
+      image_uris: ${load_images.output}
+      model_deployment: gpt-4o
+      system_prompt: ${inputs.system_prompt}
+      temperature: ${inputs.temperature}
+      top_p: ${inputs.top_p}
+    use_variants: false
