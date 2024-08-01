@@ -287,8 +287,6 @@ resource aiServicesDiagnosticSettings 'Microsoft.Insights/diagnosticSettings@202
   }
 }
 
-@description('The deployed AI Services resource.')
-output resource resource = aiServices
 @description('ID for the deployed AI Services resource.')
 output id string = aiServices.id
 @description('Name for the deployed AI Services resource.')

@@ -98,8 +98,6 @@ module secondaryKeySecret '../security/key-vault-secret.bicep' = if (keyVaultCon
   }
 }
 
-@description('The deployed AI model serverless endpoint resource.')
-output resource resource = modelServerlessEndpoint
 @description('ID for the deployed AI model serverless endpoint resource.')
 output id string = modelServerlessEndpoint.id
 @description('Name for the deployed AI model serverless endpoint resource.')

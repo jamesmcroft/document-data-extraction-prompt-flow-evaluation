@@ -61,8 +61,6 @@ resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2023-09
   }
 }
 
-@description('The deployed Log Analytics Workspace resource.')
-output resource resource = logAnalyticsWorkspace
 @description('ID for the deployed Log Analytics Workspace resource.')
 output id string = logAnalyticsWorkspace.id
 @description('Name for the deployed Log Analytics Workspace resource.')

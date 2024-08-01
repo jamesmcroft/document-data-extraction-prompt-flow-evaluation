@@ -22,8 +22,6 @@ resource identity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-07-31-p
   tags: tags
 }
 
-@description('The deployed Managed Identity resource.')
-output resource resource = identity
 @description('ID for the deployed Managed Identity resource.')
 output id string = identity.id
 @description('Name for the deployed Managed Identity resource.')

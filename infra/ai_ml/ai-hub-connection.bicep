@@ -50,8 +50,6 @@ resource hub 'Microsoft.MachineLearningServices/workspaces@2024-04-01-preview' e
   }
 }
 
-@description('The deployed AI Hub/Project workspace connection resource.')
-output resource resource = hub::hubConnection
 @description('ID for the deployed AI Hub/Project workspace connection resource.')
 output id string = hub::hubConnection.id
 @description('Name for the deployed AI Hub/Project workspace connection resource.')

@@ -136,8 +136,6 @@ resource assignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = [
   }
 ]
 
-@description('The deployed AI Hub resource.')
-output resource resource = aiHub
 @description('ID for the deployed AI Hub resource.')
 output id string = aiHub.id
 @description('Name for the deployed AI Hub resource.')

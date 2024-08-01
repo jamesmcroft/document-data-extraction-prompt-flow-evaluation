@@ -35,8 +35,6 @@ fi
 
 echo "Starting infrastructure deployment..." >&2
 
-az --version
-
 userPrincipalId=$(az rest --method GET --uri "https://graph.microsoft.com/v1.0/me" | jq -r '.id')
 
 deploymentOutputs=$(

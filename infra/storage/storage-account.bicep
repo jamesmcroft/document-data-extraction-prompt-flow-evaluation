@@ -110,8 +110,6 @@ resource assignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = [
   }
 ]
 
-@description('The deployed Storage Account resource.')
-output resource resource = storageAccount
 @description('ID for the deployed Storage Account resource.')
 output id string = storageAccount.id
 @description('Name for the deployed Storage Account resource.')

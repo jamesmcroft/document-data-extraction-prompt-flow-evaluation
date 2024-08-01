@@ -23,8 +23,6 @@ resource applicationInsights 'Microsoft.Insights/components@2020-02-02' = {
   }
 }
 
-@description('The deployed Application Insights resource.')
-output resource resource = applicationInsights
 @description('ID for the deployed Application Insights resource.')
 output id string = applicationInsights.id
 @description('Name for the deployed Application Insights resource.')

@@ -21,8 +21,6 @@ resource keyVault 'Microsoft.KeyVault/vaults@2024-04-01-preview' existing = {
   }
 }
 
-@description('The deployed Key Vault Secret resource.')
-output resource resource = keyVault::keyVaultSecret
 @description('ID for the deployed Key Vault Secret resource.')
 output id string = keyVault::keyVaultSecret.id
 @description('Name for the deployed Key Vault Secret resource.')

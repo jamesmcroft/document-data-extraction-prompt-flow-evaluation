@@ -58,8 +58,6 @@ resource assignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = [
   }
 ]
 
-@description('The deployed Key Vault resource.')
-output resource resource = keyVault
 @description('ID for the deployed Key Vault resource.')
 output id string = keyVault.id
 @description('Name for the deployed Key Vault resource.')
