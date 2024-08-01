@@ -1,7 +1,9 @@
 azure-ai-resources==1.0.0.b8
 azure-identity==1.17.1
+bash_kernel==0.9.3
 ipykernel==6.29.4
 notebook==7.2.1
+pdf2image==1.17.0
 promptflow==1.13.0
 promptflow-tools==1.4.0
 python-dotenv==1.0.1

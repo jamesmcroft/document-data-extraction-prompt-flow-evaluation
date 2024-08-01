@@ -1,0 +1,11 @@
+{
+    "id": "local-setup",
+    "name": "Setup for Local Environment",
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/azure-cli"
+    ],
+    "install": {
+        "app": "",
+        "file": "install.sh"
+    }
+}

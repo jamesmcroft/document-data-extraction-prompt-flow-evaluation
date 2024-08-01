@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-toolsai.jupyter",
+        "tomoki1207.pdf",
+        "ms-azuretools.vscode-bicep",
+        "ms-vscode.vscode-node-azure-pack",
+        "GitHub.vscode-pull-request-github",
+        "prompt-flow.prompt-flow"
+    ]
+}

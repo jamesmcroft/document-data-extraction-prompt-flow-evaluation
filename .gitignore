@@ -168,3 +168,4 @@ cython_debug/
 
 # Outputs
 *Outputs.json
+tests/**/*.jpg
