@@ -36,11 +36,12 @@ echo "Starting environment setup..." >&2
 
 if [ $skipInfrastructure -eq 0 ] || [ ! -f ./infra/InfrastructureOutputs.json ]; then
     echo "Deploying infrastructure..." >&2
-    infrastructureOutputs=$(./infra/deploy.sh --deploymentName $deploymentName --location $location)
+    ./infra/deploy.sh --deploymentName $deploymentName --location $location
 else
     echo "Skipping infrastructure deployment. Using existing outputs..." >&2
-    infrastructureOutputs=$(cat ./infra/InfrastructureOutputs.json | jq '.')
 fi
+
+infrastructureOutputs=$(cat ./infra/InfrastructureOutputs.json | jq '.')
 
 promptFlowOutputs=$(./promptflow/deploy.sh \
     --subscriptionId $(echo $infrastructureOutputs | jq -r '.subscriptionInfo.value.id') \
