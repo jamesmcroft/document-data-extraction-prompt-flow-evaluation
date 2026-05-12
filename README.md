@@ -1,5 +1,8 @@
 # Document Data Extraction with GPT-4o and Evaluation using Prompt Flow
 
+> [!IMPORTANT]
+> Document processing with Azure AI samples have moved to [Azure-Samples/azure-ai-document-processing-samples](https://github.com/Azure-Samples/azure-ai-document-processing-samples). This repo is archived for reference.
+
 This sample demonstrates [how to use GPT-4o](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models#gpt-4o-and-gpt-4-turbo) to extract structured JSON data from PDF documents and evaluate the extracted data using the [Prompt Flow](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/flow-bulk-test-evaluation) feature in Azure AI Studio.
 
 The approach builds on the understanding that [Azure OpenAI GPT-4o is effective at analyzing document images and extracting structured JSON objects](https://github.com/Azure-Samples/azure-openai-gpt-4-vision-pdf-extraction-sample) from them based on a provided extraction prompt including an expected output schema. The approach for evaluating document data extraction with Prompt Flow in Azure AI Studio highlights the following advantages:
